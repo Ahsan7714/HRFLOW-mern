@@ -25,6 +25,7 @@ app.use(
 const admin = require('./routes/adminRoutes')
 app.use('/api/v1', admin);
 
+
 // Catch-all route to serve index.html
 app.get("*", function (_, res) {
   res.sendFile(
@@ -33,6 +34,10 @@ app.get("*", function (_, res) {
       res.status(500).send(err);
     }
   );
+});
+
+app.get("/", function (_, res) {
+  res.send("Hello, World!");
 });
 
 app.listen(port, () => {
