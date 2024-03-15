@@ -12,8 +12,6 @@ connectDB();
 // Serve static files from the client/dist directory
 app.use('/images', express.static(path.join(__dirname, 'public/images')));
 
-app.use(express.json());
-app.use(cookieParser());
 app.use(
   cors({
     // origin: ["http://localhost:5173"],
@@ -22,6 +20,8 @@ app.use(
     credentials: true,
   })
   );
+  app.use(cookieParser());
+  app.use(express.json());
   app.use(express.static(path.join(__dirname, "../client/dist")));
 
 const admin = require('./routes/adminRoutes')
