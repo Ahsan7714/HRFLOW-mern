@@ -8,10 +8,6 @@
   ],
   "routes": [
     {
-      "src": "/(index\\.html)?",
-      "dest": "/client/dist/index.html"
-    },
-    {
       "src": "/images/(.*)",
       "dest": "/public/images/$1"
     },
