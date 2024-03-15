@@ -26,12 +26,13 @@ const admin = require('./routes/adminRoutes')
 app.use('/api/v1', admin);
 
 // Catch-all route to serve index.html
-app.get('*', function (_, res) {
-    res.sendFile(path.join(__dirname, '../client/dist/index.html'), function (err) {
-        if (err) {
-            res.status(500).send(err);
-        }
-    });
+app.get("*", function (_, res) {
+  res.sendFile(
+    path.join(__dirname,"../client/dist/index.html"),
+    function (err) {
+      res.status(500).send(err);
+    }
+  );
 });
 
 app.listen(port, () => {
