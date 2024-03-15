@@ -20,7 +20,7 @@ app.use(
     credentials: true,
   })
   );
-  app.use(express.static(path.join(__dirname, "../client/dist")));
+  app.use(express.static(path.join(__dirname, "../client")));
 
 const admin = require('./routes/adminRoutes')
 app.use('/api/v1', admin);
@@ -28,7 +28,7 @@ app.use('/api/v1', admin);
 // Catch-all route to serve index.html
 app.get("*", function (_, res) {
   res.sendFile(
-    path.join(__dirname,"../client/dist/index.html"),
+    path.join(__dirname, "../client", "index.html"),
     function (err) {
       res.status(500).send(err);
     }
