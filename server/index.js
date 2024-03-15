@@ -31,17 +31,16 @@ app.use('/api/v1', admin);
 // Catch-all route to serve index.html
 app.get("*", function (_, res) {
   res.sendFile(
-    path.join(__dirname, "../client/dist", "index.html"),
+    path.join(__dirname, "../client/dist/index.html"),
     function (err) {
       res.status(500).send(err);
     }
   );
 });
 
-app.get("/", function (_, res) {
-  res.send("Hello, World!");
+app.use('/', (req, res) => {
+  res.send('Hello World');
 });
-
 app.listen(port, () => {
     console.log(`server is running on localhost ${port}`);
 });
