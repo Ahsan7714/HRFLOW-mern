@@ -15,7 +15,7 @@ connectDB();
 app.use(
   cors({
     // origin: ["http://localhost:5173"],
-    origin:["https://hrflow.vercel.app","https://hrflow-mern-server.vercel.app"],
+    origin:["https://hrflow.vercel.app","https://hrflow-mern-server.vercel.app","https://hrflow-mern-backend-five.vercel.app"],
     methods: ["POST", "GET", "PUT", "DELETE"],
     credentials: true,
   })
